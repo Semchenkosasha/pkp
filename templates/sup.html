@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="ru" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title th:text="${sup.name}"></title>
+</head>
+
+<head th:insert="blocks/head :: head"></head>
+
+<body>
+
+<div th:insert="blocks/nav :: nav"></div>
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="text-uppercase section-heading" th:text="${sup.name}"></h2>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-4">
+                <div class="text-center" style="height: 300px">
+                    <img class="rounded-5" th:src="${'/img/' + sup.photo}" style="max-height: 300px;max-width: 100%;">
+                </div>
+            </div>
+            <div class="col">
+                <span th:text="${'ФИО: ' + sup.user.fio}"></span>
+                <br>
+                <span th:text="${'Контактные данные: ' + sup.contact}"></span>
+                <br>
+                <span th:text="${'Логистическая компания: ' + sup.company}"></span>
+                <br>
+                <span th:text="${'Адрес: ' + sup.country}"></span>
+                <br>
+                <span th:text="${'Почта: ' + sup.email}"></span>
+                <br>
+                <span th:text="${'Рейтинг: ' + sup.score}"></span>
+                <br>
+                <span th:text="${'Количество товаров: ' + sup.products.size()}"></span>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<footer th:insert="blocks/footer :: footer"></footer>
+
+</body>
+
+</html>

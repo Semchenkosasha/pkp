@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>О нас</title>
+</head>
+
+<head th:insert="blocks/head :: head"></head>
+
+<body>
+<div th:insert="blocks/nav :: nav"></div>
+
+<section class="py-5 my-5">
+    <div class="container py-5 narrow-text">
+        <div class="row mb-2">
+            <div class="col-md-8 col-xl-6 text-center mx-auto">
+                <h2 class="display-6 fw-bold text-center mb-5">
+                    <span class="underline pb-1"><strong>О нас</strong></span>
+                </h2>
+            </div>
+        </div>
+
+        <p align="justify">
+            Мы стремимся предоставить <mark>эффективное решение</mark> для оптимизации процессов управления заказами, повышения прозрачности
+            и улучшения взаимодействия с нашими клиентами и поставщиками.
+        </p>
+        <p align="justify">
+            <mark>Наша главная цель</mark> - обеспечить нашим клиентам и партнерам надежное и <mark>эффективное решение</mark> для управления
+            заказами в их цепи поставок. Мы стремимся к постоянному улучшению нашего сервиса, предоставляя инновационные
+            инструменты и ресурсы для оптимизации бизнес-процессов.
+        </p>
+        <p align="justify">
+            Мы используем <mark>передовые технологии</mark> для обеспечения надежности, безопасности и удобства использования приложения.
+            Мы понимаем индивидуальные <mark>потребности наших клиентов</mark> и работаем над созданием решений, отвечающих их требованиям.
+        </p>
+
+    </div>
+</section>
+<div style="display: flex; justify-content: center; margin-top: -50px;">
+    <iframe
+            width="1000"
+            height="500"
+            src="https://www.youtube.com/embed/cYjV2uFtj-o"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+    </iframe>
+</div>
+<footer th:insert="blocks/footer :: footer" class="page-footer dark mt-auto"></footer>
+<script src="../static/api.js"></script>
+</body>
+</html>

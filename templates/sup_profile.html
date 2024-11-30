@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="ru" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Данные</title>
+    <style>
+        .form-container input.form-control,
+        .form-container button.btn-success {
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .form-container label {
+            display: block;
+            text-align: left;
+            margin: 5px auto 2px;
+            max-width: 600px;
+            font-size: 14px;
+        }
+
+        .form-container input.form-control {
+            margin-bottom: 5px;
+        }
+
+        .section-heading {
+            margin-bottom: 60px;
+        }
+    </style>
+</head>
+
+<head th:insert="blocks/head :: head"></head>
+
+<body>
+
+<div th:insert="blocks/nav :: nav"></div>
+
+<section>
+    <div class="container">
+        <div class="row mb-3">
+            <div class="col-lg-12 text-center">
+                <h2 class="text-uppercase section-heading">Данные</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-6">
+                <div th:if="${message}" class="text-center mt-20px">
+                    <div class="alert alert-info" role="alert">
+                        <strong><span th:text="${message}"></span></strong>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3"></div>
+        </div>
+        <div class="row">
+            <div class="col-6 text-center">
+                <form class="form-container" method="post" enctype="multipart/form-data" action="/supProfile/photo">
+                    <img class="rounded-5 w-100 mb-3" th:src="${'/img/' + user.sup.photo}">
+                    <label for="photo">Обновить изображение</label>
+                    <input id="photo" class="form-control" type="file" name="photo" required accept="image/*">
+                    <button type="submit" class="btn btn-success">Обновить изображение</button>
+                </form>
+            </div>
+            <div class="col-6 text-center">
+                <form class="form-container" method="post" action="/supProfile/edit">
+                    <label for="name">Название компании</label>
+                    <input id="name" class="form-control" type="text" name="name" required placeholder="Название компании" th:value="${user.sup.name}">
+                    <label for="company">Логистическая компания</label>
+                    <input id="company" class="form-control" type="text" name="company" required placeholder="Логистическая компания" th:value="${user.sup.company}">
+                    <label for="contact">Контактные данные</label>
+                    <input id="contact" class="form-control" type="text" name="contact" required placeholder="Контактные данные" th:value="${user.sup.contact}">
+                    <label for="country">Адрес</label>
+                    <input id="country" class="form-control" type="text" name="country" required placeholder="Адрес" th:value="${user.sup.country}">
+                    <label for="email">Почта</label>
+                    <input id="email" class="form-control" type="email" name="email" required placeholder="Почта" th:value="${user.sup.email}">
+                    <button type="submit" class="btn btn-success">Обновить данные</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer th:insert="blocks/footer :: footer"></footer>
+
+</body>
+
+</html>
